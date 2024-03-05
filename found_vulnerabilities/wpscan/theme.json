@@ -1,0 +1,170 @@
+_______________________________________________________________
+         __          _______   _____
+         \ \        / /  __ \ / ____|
+          \ \  /\  / /| |__) | (___   ___  __ _ _ __ ®
+           \ \/  \/ / |  ___/ \___ \ / __|/ _` | '_ \
+            \  /\  /  | |     ____) | (__| (_| | | | |
+             \/  \/   |_|    |_____/ \___|\__,_|_| |_|
+
+         WordPress Security Scanner by the WPScan Team
+                         Version 3.8.25
+       Sponsored by Automattic - https://automattic.com/
+       @_WPScan_, @ethicalhack3r, @erwan_lr, @firefart
+_______________________________________________________________
+
+[32m[+][0m URL: http://127.0.0.1/test/ [127.0.0.1]
+[32m[+][0m Started: Mon Mar  4 23:08:35 2024
+
+Interesting Finding(s):
+
+[32m[+][0m Headers
+ | Interesting Entries:
+ |  - Server: Apache/2.4.58 (Unix) OpenSSL/1.1.1w PHP/8.2.12 mod_perl/2.0.12 Perl/v5.34.1
+ |  - X-Powered-By: PHP/8.2.12
+ | Found By: Headers (Passive Detection)
+ | Confidence: 100%
+
+[32m[+][0m XML-RPC seems to be enabled: http://127.0.0.1/test/xmlrpc.php
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+ | References:
+ |  - http://codex.wordpress.org/XML-RPC_Pingback_API
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_ghost_scanner/
+ |  - https://www.rapid7.com/db/modules/auxiliary/dos/http/wordpress_xmlrpc_dos/
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_xmlrpc_login/
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_pingback_access/
+
+[32m[+][0m WordPress readme found: http://127.0.0.1/test/readme.html
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+
+[32m[+][0m Upload directory has listing enabled: http://127.0.0.1/test/wp-content/uploads/
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+
+[32m[+][0m The external WP-Cron seems to be enabled: http://127.0.0.1/test/wp-cron.php
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 60%
+ | References:
+ |  - https://www.iplocation.net/defend-wordpress-from-ddos
+ |  - https://github.com/wpscanteam/wpscan/issues/1299
+
+[32m[+][0m WordPress version 6.4.3 identified (Latest, released on 2024-01-30).
+ | Found By: Rss Generator (Passive Detection)
+ |  - http://127.0.0.1/test/feed/, <generator>https://wordpress.org/?v=6.4.3</generator>
+ |  - http://127.0.0.1/test/comments/feed/, <generator>https://wordpress.org/?v=6.4.3</generator>
+
+[32m[+][0m WordPress theme in use: twentytwentythree
+ | Location: http://127.0.0.1/test/wp-content/themes/twentytwentythree/
+ | Last Updated: 2023-11-07T00:00:00.000Z
+ | Readme: http://127.0.0.1/test/wp-content/themes/twentytwentythree/readme.txt
+ | [33m[!][0m The version is out of date, the latest version is 1.3
+ | [31m[!][0m Directory listing is enabled
+ | Style URL: http://127.0.0.1/test/wp-content/themes/twentytwentythree/style.css
+ | Style Name: Twenty Twenty-Three
+ | Style URI: https://wordpress.org/themes/twentytwentythree
+ | Description: Twenty Twenty-Three is designed to take advantage of the new design tools introduced in WordPress 6....
+ | Author: the WordPress team
+ | Author URI: https://wordpress.org
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ | Confirmed By: Urls In 404 Page (Passive Detection)
+ |
+ | Version: 1.2 (80% confidence)
+ | Found By: Style (Passive Detection)
+ |  - http://127.0.0.1/test/wp-content/themes/twentytwentythree/style.css, Match: 'Version: 1.2'
+
+
+[34m[i][0m Theme(s) Identified:
+
+[32m[+][0m twentytwentyfour
+ | Location: http://127.0.0.1/test/wp-content/themes/twentytwentyfour/
+ | Readme: http://127.0.0.1/test/wp-content/themes/twentytwentyfour/readme.txt
+ | [31m[!][0m Directory listing is enabled
+ | Style URL: http://127.0.0.1/test/wp-content/themes/twentytwentyfour/style.css
+ | Style Name: Twenty Twenty-Four
+ | Style URI: https://wordpress.org/themes/twentytwentyfour/
+ | Description: Twenty Twenty-Four is designed to be flexible, versatile and applicable to any website. Its collecti...
+ | Author: the WordPress team
+ | Author URI: https://wordpress.org
+ |
+ | Found By: Known Locations (Aggressive Detection)
+ |  - http://127.0.0.1/test/wp-content/themes/twentytwentyfour/, status: 200
+ |
+ | Version: 1.0 (80% confidence)
+ | Found By: Style (Passive Detection)
+ |  - http://127.0.0.1/test/wp-content/themes/twentytwentyfour/style.css, Match: 'Version: 1.0'
+
+[32m[+][0m twentytwentyone
+ | Location: http://127.0.0.1/test/wp-content/themes/twentytwentyone/
+ | Last Updated: 2024-01-16T00:00:00.000Z
+ | Readme: http://127.0.0.1/test/wp-content/themes/twentytwentyone/readme.txt
+ | [33m[!][0m The version is out of date, the latest version is 2.1
+ | Style URL: http://127.0.0.1/test/wp-content/themes/twentytwentyone/style.css
+ | Style Name: Twenty Twenty-One
+ | Style URI: https://wordpress.org/themes/twentytwentyone/
+ | Description: Twenty Twenty-One is a blank canvas for your ideas and it makes the block editor your best brush. Wi...
+ | Author: the WordPress team
+ | Author URI: https://wordpress.org/
+ |
+ | Found By: Known Locations (Aggressive Detection)
+ |  - http://127.0.0.1/test/wp-content/themes/twentytwentyone/, status: 500
+ |
+ | Version: 1.9 (80% confidence)
+ | Found By: Style (Passive Detection)
+ |  - http://127.0.0.1/test/wp-content/themes/twentytwentyone/style.css, Match: 'Version: 1.9'
+
+[32m[+][0m twentytwentythree
+ | Location: http://127.0.0.1/test/wp-content/themes/twentytwentythree/
+ | Last Updated: 2023-11-07T00:00:00.000Z
+ | Readme: http://127.0.0.1/test/wp-content/themes/twentytwentythree/readme.txt
+ | [33m[!][0m The version is out of date, the latest version is 1.3
+ | [31m[!][0m Directory listing is enabled
+ | Style URL: http://127.0.0.1/test/wp-content/themes/twentytwentythree/style.css
+ | Style Name: Twenty Twenty-Three
+ | Style URI: https://wordpress.org/themes/twentytwentythree
+ | Description: Twenty Twenty-Three is designed to take advantage of the new design tools introduced in WordPress 6....
+ | Author: the WordPress team
+ | Author URI: https://wordpress.org
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ | Confirmed By:
+ |  Urls In 404 Page (Passive Detection)
+ |  Known Locations (Aggressive Detection)
+ |   - http://127.0.0.1/test/wp-content/themes/twentytwentythree/, status: 200
+ |
+ | Version: 1.2 (80% confidence)
+ | Found By: Style (Passive Detection)
+ |  - http://127.0.0.1/test/wp-content/themes/twentytwentythree/style.css, Match: 'Version: 1.2'
+
+[32m[+][0m twentytwentytwo
+ | Location: http://127.0.0.1/test/wp-content/themes/twentytwentytwo/
+ | Last Updated: 2023-11-07T00:00:00.000Z
+ | Readme: http://127.0.0.1/test/wp-content/themes/twentytwentytwo/readme.txt
+ | [33m[!][0m The version is out of date, the latest version is 1.6
+ | Style URL: http://127.0.0.1/test/wp-content/themes/twentytwentytwo/style.css
+ | Style Name: Twenty Twenty-Two
+ | Style URI: https://wordpress.org/themes/twentytwentytwo/
+ | Description: Built on a solidly designed foundation, Twenty Twenty-Two embraces the idea that everyone deserves a...
+ | Author: the WordPress team
+ | Author URI: https://wordpress.org/
+ |
+ | Found By: Known Locations (Aggressive Detection)
+ |  - http://127.0.0.1/test/wp-content/themes/twentytwentytwo/, status: 200
+ |
+ | Version: 1.5 (80% confidence)
+ | Found By: Style (Passive Detection)
+ |  - http://127.0.0.1/test/wp-content/themes/twentytwentytwo/style.css, Match: 'Version: 1.5'
+
+[32m[+][0m WPScan DB API OK
+ | Plan: free
+ | Requests Done (during the scan): 3
+ | Requests Remaining: 19
+
+[32m[+][0m Finished: Mon Mar  4 23:12:15 2024
+[32m[+][0m Requests Done: 420
+[32m[+][0m Cached Requests: 51
+[32m[+][0m Data Sent: 112.746 KB
+[32m[+][0m Data Received: 415.138 KB
+[32m[+][0m Memory used: 189.324 MB
+[32m[+][0m Elapsed time: 00:03:40
